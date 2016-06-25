@@ -1,0 +1,24 @@
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":false,"error_code":400,"description":"Bad request: Inline query result must be an object"}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
+{"ok":true,"result":true}
+{"ok":false,"error_code":400,"description":"Bad Request: chat_id is empty"}
