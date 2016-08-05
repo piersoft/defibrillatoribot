@@ -13,6 +13,12 @@ class Telegram {
 	private $updates = array();
 	public $inited = false;
 
+
+	public function KeyboardButton($text, $request_location = null, $request_contact = null)
+	{
+		$params = compact('text', 'request_location', 'request_contact');
+		return $params;
+	}
 	public function InputTextMessageContent($message_text, $parse_mode = null, $disable_web_page_preview = false)
 	{
 		$params = compact('message_text', 'parse_mode', 'disable_web_page_preview');
@@ -196,6 +202,62 @@ class Telegram {
         $encodedMarkup = json_encode($replyMarkup, true);
         return $encodedMarkup;
     }
+		/// Create a KeyboardButton
+			/** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
+			 * \param $text String; Array of button rows, each represented by an Array of Strings
+			 * \param $request_contact Boolean Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
+			 * \param $request_location Boolean Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
+			 * \return the requested button as Array
+			 */
+			public function buildKeyboardButton($text, $request_contact = false, $request_location = false) {
+					$replyMarkup = array(
+							'text' => $text,
+							'request_contact' => $request_contact,
+							'request_location' => $request_location
+					);
+					if ($url != "") {
+							$replyMarkup['url'] = $url;
+					} else if ($callback_data != "") {
+							$replyMarkup['callback_data'] = $callback_data;
+					} else if ($switch_inline_query != "") {
+							$replyMarkup['switch_inline_query'] = $switch_inline_query;
+					}
+					return $replyMarkup;
+			}
+
+			/// Set an InlineKeyBoard
+		 /** This object represents an inline keyboard that appears right next to the message it belongs to.
+			* \param $options Array of Array of InlineKeyboardButton; Array of button rows, each represented by an Array of InlineKeyboardButton
+			* \return the requested keyboard as Json
+			*/
+		 public function buildInlineKeyBoard(array $options) {
+				 $replyMarkup = array(
+						 'inline_keyboard' => $options,
+				 );
+				 $encodedMarkup = json_encode($replyMarkup, true);
+				 return $encodedMarkup;
+		 }
+		 /// Create an InlineKeyboardButton
+		 /** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
+			* \param $text String; Array of button rows, each represented by an Array of Strings
+			* \param $url String Optional. HTTP url to be opened when button is pressed
+			* \param $callback_data String Optional. Data to be sent in a callback query to the bot when button is pressed
+			* \param $switch_inline_query String Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot‘s username and the specified inline query in the input field. Can be empty, in which case just the bot’s username will be inserted.
+			* \return the requested button as Array
+			*/
+		 public function buildInlineKeyboardButton($text, $url = "", $callback_data = "", $switch_inline_query = "") {
+				 $replyMarkup = array(
+						 'text' => $text
+				 );
+				 if ($url != "") {
+						 $replyMarkup['url'] = $url;
+				 } else if ($callback_data != "") {
+						 $replyMarkup['callback_data'] = $callback_data;
+				 } else if ($switch_inline_query != "") {
+						 $replyMarkup['switch_inline_query'] = $switch_inline_query;
+				 }
+				 return $replyMarkup;
+		 }
 
 	 public function buildKeyBoardHide($selective = true) {
         $replyMarkup = array(

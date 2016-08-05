@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Defibrillator by @piersoft</title>
+  <title>Defibrillatori by @piersoft</title>
   <meta charset="utf-8" />
   <link rel="shortcut icon" href="favicon.ico" />
   <meta property="og:image" content="http://www.piersoft.it/dae/dae.png"/>
@@ -27,7 +27,7 @@
 <body>
   <div id="map"></div>
   <script>
-	  var attr_osm = 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors. Defibrillator Map powered by @piersoft',
+	  var attr_osm = 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors. DAE Map powered by @piersoft',
       attr_overpass = 'POI via <a href="http://www.overpass-api.de/">Overpass API</a>';
     var osm = new L.TileLayer('http://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {opacity: 0.7, attribution: [attr_osm, attr_overpass].join(', ')});
     var lat=parseFloat('<?php printf($_GET['lat']); ?>'),
@@ -86,16 +86,7 @@
           if (e.id in this.instance._ids) return;
           this.instance._ids[e.id] = true;
           var pos = new L.LatLng(e.lat, e.lon);
-
-        //  var data=0.0;
-        //  if (miles >=1){
-        //    data =number_format($miles, 2, '.', '')+" Km";
-        //  } else data =number_format(($miles*1000), 0, '.', '')+" mt";
           var distanzap=Dist(e.lat, e.lon,lat,lon);
-        //    if (distanzap >=1){
-        //      data =number_format(distanzap, 2, '.', '')+" Km";
-        //    } else data =number_format((distanzap*1000), 0, '.', '')+" mt";
-        //  console.log(distanzap);
           var popup = this.instance._poiInfo(e.tags,e.id,e.lat, e.lon,lat,lon,distanzap);
           var color = e.tags.collection_times ? 'green':'red';
           var circle = L.circle(pos, 20, {
